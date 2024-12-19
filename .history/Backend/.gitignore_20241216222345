@@ -1,0 +1,20 @@
+# Ignore the node_modules directory
+node_modules
+# Ignore all .log files
+*.log
+
+# Ignore all files in the build directory
+build/
+
+# Ignore all files ending with .tmp in any folder
+**/*.tmp
+
+# Do not ignore this specific file, even if its pattern is ignored
+!important.log
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
+
+# Ignore system files on macOS
+.DS_Store
