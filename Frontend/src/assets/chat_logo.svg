@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .dot1 { animation: bounce 1s ease-in-out infinite; }
+    .dot2 { animation: bounce 1s ease-in-out infinite 0.2s; }
+    .dot3 { animation: bounce 1s ease-in-out infinite 0.4s; }
+  </style>
+
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="90" fill="#34C759"/>
+  
+  <!-- Chat bubble -->
+  <path d="M160 100c0 33.137-26.863 60-60 60-12.297 0-23.892-3.714-33.536-10.132l-26.464 10.132 10.132-26.464C43.714 123.892 40 112.297 40 100c0-33.137 26.863-60 60-60s60 26.863 60 60z" 
+        fill="white"/>
+  
+  <!-- Animated dots -->
+  <circle class="dot1" cx="80" cy="100" r="8" fill="#34C759"/>
+  <circle class="dot2" cx="120" cy="100" r="8" fill="#34C759"/>
+  <circle class="dot3" cx="160" cy="100" r="8" fill="#34C759"/>
+</svg>
