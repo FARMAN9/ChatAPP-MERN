@@ -1,22 +1,32 @@
 import React from "react";
 
-function Message() {
+function Message({ message }) {
+  const authUser = JSON.parse(localStorage.getItem("chatapp")) || {};
+  const isSender = message.sender?._id === authUser?._id;
+  console.log("message", message);
+
+  const createdAt = new Date(message.createdAt);
+  const formattedTime = createdAt.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+  const chatName = isSender ? " chat-end" : "chat-start";
+  const chatColor = isSender ? "chat-bubble-primary" : "chat-bubble-secondary";
+
   return (
     <div>
-      <div class="chat chat-start">
-        <div class="chat-bubble chat-bubble-primary">
-          What kind of nonsense is this
+      <div className={`chat ${chatName}`}>
+        <div className={`chat-bubble ${chatColor}`}>
+          {isSender ? (
+            message.message
+          ) : (
+            <>
+              <span className="chat-bubble-username">{message.sender?.fullname}</span>
+              {message.message}
+            </>
+          )}
         </div>
-      </div>
-      <div class="chat chat-end">
-        <div class="chat-bubble chat-bubble-secondary">
-          Put me on the Council and not make me a Master!??
-        </div>
-      </div>
-      <div class="chat chat-end">
-        <div class="chat-bubble chat-bubble-secondary">
-          Put me on the Council and not make me a Master!??
-        </div>
+        <div className="chat-footer">{formattedTime}</div>
       </div>
     </div>
   );

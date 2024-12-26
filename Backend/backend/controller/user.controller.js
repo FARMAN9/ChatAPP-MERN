@@ -86,16 +86,27 @@ export const login = async (req, res) => {
 
 
 export const logout = async (req, res) => {
+  try {
+    res.clearCookie("token");
+    res.status(201).json({ message: "User logged out successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+export const allUser=async(req,res)=>{
 
   try{
-    res.clearCookie("token");
-    res.status(201).json({
-      message: "user logged out successfully",
+    const loggedInUser=req.user;
+    const users=await User.find({_id:{$ne:loggedInUser._id}}).select("-password");
+    res.status(200).json({
+      message:"users fetched successfully",
+      users
     });
-  }catch(error){
+  }catch(error){  
     res.status(500).json({
-      error: "internal server error",
+      error: "all users not fetched "+error,  
     });
   }
-  
 }

@@ -23,7 +23,7 @@ function Login() {
         email:data.email,
         password:data.password,
     }
-    await axios.post("http://localhost:3000/user/login",userdata).then(res=>{
+    await axios.post("api/user/login",userdata).then(res=>{
         if(res.data)
         {
             setAlert({

@@ -3,10 +3,10 @@ import { FaSearch } from "react-icons/fa";
 
 function Search() {
   return (
-    <div className="px-y py-4 h-[10vh]">
+    <div className=" h-[10vh]">
       <form action="">
         <div className="flex space-x-3">
-          <label className="input m-2 p-3 border-[-1px] border-gary-700 bg-slate-900 flex items-center gap-2 w-[80%]">
+          <label className="input m-1 p-3 border-[-1px] border-gary-700 bg-slate-900 flex items-center gap-2 w-[80%]">
             <input type="text" className="grow" placeholder="Search" />
           </label>
           <button>
