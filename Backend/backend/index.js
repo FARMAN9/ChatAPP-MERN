@@ -7,9 +7,10 @@ import swaggerUi from "swagger-ui-express";
 import swaggerSpec from "./swaggerUi/swaggerUi.js";
 import cookieParser from "cookie-parser";
 import messageRouter from "./routers/message.router.js";
+import {server,app} from "./SocketIO/server.js"
 
 
-const app = express();
+
 
 
 dotenv.config();
@@ -48,6 +49,10 @@ app.use("*", (req, res) => {
   });
 })
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+
+
+
+//-------------------------------------------------->
+server.listen(PORT, () => {
+  console.log(`Server is Running on port ${PORT}`);
 });

@@ -1,9 +1,11 @@
 import React from "react";
 import  useConversation  from "../../Zustand/useConversation";
+import { useSocketContext } from "../../contex/socketContext.jsx";
 
 function Chatuser() {
   const { selectedConversation } = useConversation();
-  console.log('====',selectedConversation);
+  const{ socket ,onlineUsers}=useSocketContext();
+  const isOnline=onlineUsers.includes(selectedConversation._id);
 
   return (
     <div className="flex m-0 bg-slate-700 rounded-m gap-3 items-center h-[10vh] border-l-8 rounded-2xl">
@@ -13,8 +15,8 @@ function Chatuser() {
         </div>
       </div>
       <div className="flex-1">
-        <h1 className="font-bold text-3xl text-border">{selectedConversation?.fullname}</h1>
-        <span className="text-2xl">offline</span>
+        <h1 className="font-bold text-3xl text-border">{selectedConversation.fullname }</h1>
+        <span className="text-2xl" >{isOnline ? "online" : "offline"}</span>
       </div>
     </div>
   );
