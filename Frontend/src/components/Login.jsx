@@ -5,6 +5,7 @@ import { FaEnvelope, FaEye, FaEyeSlash, FaLock } from 'react-icons/fa';
 import axios, {isCancel, AxiosError} from 'axios';
 import { useAuth} from '../contex/authprovider';
 import { Link, Navigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 function Login() {
     const [authUser, setAuthUser] = useAuth();
@@ -30,6 +31,7 @@ function Login() {
                 type: 'success',
                 message: res.data.message
             });
+            toast.success(res.data.message);
             setTimeout(() => {
                 setAlert(null);
             }, 3000);
@@ -42,6 +44,7 @@ function Login() {
                 type: 'error',
                 message: err.response.data.error
             });
+
             setTimeout(() => {
                 setAlert(null);
             }, 3000);
@@ -56,7 +59,7 @@ function Login() {
   const handleClick = () => setShowPassword(!showPassword);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen p-4 backdrop-blur-sm ">
+    <div className="flex flex-col items-center justify-center h-screen p-4 backdrop-blur-sm text-white">
      
       <div className="flex flex-col items-center justify-center w-full max-w-md">
         <div className="flex flex-col-2 items-center justify-center">

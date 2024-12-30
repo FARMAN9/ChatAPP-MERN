@@ -1,27 +1,41 @@
 import React, { useState } from "react";
 import { RiSendPlane2Fill } from "react-icons/ri";
 import useSendMessages from "../../contex/useSendMessages.js";
+import sendaudio from "../../assets/sendonly.mp3";
+import { useForm } from 'react-hook-form';
+
+
 
 function TypeSend() {
   const [message, setMessage] = useState("");
   const {loading, SendMessages}=useSendMessages();
+  
+ 
+
   const handleSubmit= async(e)=>{
-    console.log("message",message,e);
     e.preventDefault();
-    await  SendMessages(message);
-    setMessage("");
+    if(message.trim()!==""){
+      await  SendMessages(message);
+      const audioElement = new Audio(sendaudio);
+      audioElement.play();
+      setMessage("");
+    }
   
   }
   
   return (
-    <form onSubmit={handleSubmit}>
-    <div className="flex space-x-2 h-[10vh] text-center  bg-slate-800 rounded-md ">
-      <div className="w-[70%] items-center mx-4">
+    <form onSubmit={handleSubmit} className="bg-red-700">
+    <div className="flex space-x-1 h-[10vh]  bg-gray-800 dark:text-white">
+      <div className="w-[70%] items-center mx-7 text-[#7480FF]">
         <input
           type="text"
+          id="message"
+          name="message"
           value={message}
           placeholder="Type here"
           onChange={(e) => setMessage(e.target.value)}
+          
+
           className="border rounded-lg border-gray-700 mt-4 w-full px-4 py-3"
         />
       </div>

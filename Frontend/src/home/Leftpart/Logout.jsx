@@ -23,10 +23,10 @@ function Logout() {
   return (
     <>
       <hr />
-      <div className=" h-[10vh] bg-transparent">
+      <div className=" h-[10%] bg-transparent">
         <div>
           <BiLogOutCircle
-            className="text-5xl text-white hover:bg-slate-700 duration-300 cursor-pointer rounded-full p-2 ml-2 mt-1"
+            className="text-5xl text-red-600 hover:bg-slate-700 duration-300 cursor-pointer rounded-full p-2 ml-2 mt-1"
             onClick={handleLogout}
           />
         </div>

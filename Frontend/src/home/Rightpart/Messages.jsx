@@ -2,9 +2,11 @@ import React, { useEffect, useRef } from "react";
 import Message from "./Message";
 import useGetMessage from "../../contex/useGetMessage";
 import Loading from "../../components/Loading.jsx";
+import useGetSocketMessage from "../../contex/useGetSocketMessage.jsx";
 
 function Messages() {
   const { loading, messages } = useGetMessage();
+  useGetSocketMessage();
    // listing incoming messages
   console.log('data',messages);
 
@@ -21,7 +23,7 @@ function Messages() {
   return (
     <div
       className="flex-1 overflow-y-auto"
-      style={{ minHeight: "calc(92vh - 8vh)" }}
+      style={{ minHeight: "calc(90vh - 10vh)" }}
     >
       {loading ? (
         <Loading />

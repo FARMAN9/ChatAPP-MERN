@@ -30,6 +30,7 @@ function Signup() {
                     type: 'success',
                     message: res.data.message
                 });
+                toast.success(res.data.message);
                 setTimeout(() => {
                     setAlert(null);
                 }, 3000);
@@ -43,6 +44,7 @@ function Signup() {
                     type: 'error',
                     message: err.response.data.error
                 });
+                
                 setTimeout(() => {
                     setAlert(null);
                 }, 3000);
@@ -87,7 +89,7 @@ function Signup() {
   const [alert, setAlert] = useState(null);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen p-4 backdrop-blur-sm ">
+    <div className="flex flex-col items-center justify-center h-screen p-4 backdrop-blur-sm dark:text-white">
        
 
         <div className='flex flex-col items-center justify-center w-full max-w-md'>

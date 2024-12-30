@@ -19,7 +19,7 @@ function Right() {
   return (
 
     <>
-    <div className="border border-black w-[70%] bg-slate-900 text-gray-200">
+    <div className=" w-full bg-slate-900 text-gray-200 min-h-full">
       
     {
       !selectedConversation ? (<Nochat/>): (
@@ -27,12 +27,10 @@ function Right() {
         <Chatuser />
         <div
           className="no-bar overflow-y-auto"
-          style={{
-            maxHeight: "calc(90vh - 10vh)",
-          }}>
+          style={{ maxHeight: "calc(90vh - 10vh)" }}
+          >
           <Messages />
         </div>
-  
         <TypeSend />
         </>
       )
@@ -54,15 +52,16 @@ const Nochat = () => {
   console.log(authUser);
   return (
     <>
-      <div className="relative">
+      <div className="relative ">
         <label
           htmlFor="my-drawer-2"
-          className="btn btn-ghost drawer-button lg:hidden absolute left-5"
+          className="btn btn-ghost drawer-button lg:hidden absolute right-5 mt-6"
         >
-          <CiMenuFries className="text-white text-xl" />
+          <CiMenuFries className="text-white text-2xl" />
         </label>
         <div className="flex h-screen items-center justify-center">
-          <h1 className="text-center">
+        
+          <h1 className="text-center m-1">
             Welcome{" "}
             <span className="font-semibold text-xl">
               {authUser.user.fullname}

@@ -5,7 +5,7 @@ function Message({ message }) {
   const itsMe = message.sender === authUser.user.id;
 
   const chatName = itsMe ? " chat-end" : "chat-start";
-  const chatColor = itsMe ? "bg-blue-500" : "";
+  const chatColor = itsMe ? "chat-bubble-primary" : "chat-bubble-secondary";
   console.log(itsMe);
 
   const createdAt = new Date(message.createdAt);
