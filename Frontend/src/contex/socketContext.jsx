@@ -16,7 +16,7 @@ export const SocketProvider = ({children}) => {
 
     React.useEffect(() => {
         if(authUser){
-            const socket= io("http://localhost:3000", {query:{
+            const socket= io("https://chatapp-mern-vvn5.onrender.com", {query:{
                 userId: authUser.user.id
         }})
           setSocket(socket) 
