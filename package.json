@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon Backend/index.js",
     "start": "node  Backend/index.js",
-    "build":"build": "npm install && npm install --prefix Frontend && npx vite build --prefix Frontend"
+    "build": "npm install && npm install --prefix Frontend && npx vite build --prefix Frontend"
   },
   "author": "",
   "license": "ISC",
