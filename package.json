@@ -5,9 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon backend/index.js",
-    "start": "node  backend/index.js",
-    "build":"cd Frontend && npm install && npm run build && npm fund &&cd ../"
+    "dev": "nodemon Backend/index.js",
+    "start": "node  Backend/index.js",
+    "build":"cd Frontend && npm install && npm run build && npm fund && cd ../"
   },
   "author": "",
   "license": "ISC",
